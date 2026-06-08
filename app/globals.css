@@ -7,15 +7,15 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(to left,  hsl(41.78deg 86.43% 56.67%) 50%, hsl(9.25deg 81.38% 51.57%) 50%);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hire-box{
+  background: #f0eeec59;
+  
+
+  }
