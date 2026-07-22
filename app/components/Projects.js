@@ -82,31 +82,6 @@ export const Projects = () => {
               </div>
             ))}
 
-            {/* Original Hardcoded Projects */}
-            {[1, 2, 3, 4, 5, 6].map((project, index) => (
-              <div
-                key={`static-${index}`}
-                className="project-card group hover:bg-gray-200 cursor-pointer border-2 rounded-lg shadow-md overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col"
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                {/* Image Container */}
-                <div className="overflow-hidden bg-gray-100 flex items-center justify-center h-48 border-b-4 border-silver-700">
-                  <img
-                    src={`./projects/img ${project}.png`}
-                    alt={`Project ${project}`}
-                    className="w-full h-full object-cover group-hover:object-contain group-hover:scale-95 transition-all duration-300 ease-in-out"
-                  />
-                </div>
-                <div className="p-4 bg-white flex-grow flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold text-red-600 mb-2">Project {project}</h3>
-                  </div>
-                  <button className="inline-block mt-4 bg-gray-600 text-white font-bold py-2 px-4 rounded text-center opacity-50 cursor-not-allowed">
-                    Demo Not Available
-                  </button>
-                </div>
-              </div>
-            ))}
 
           </div>
         </div>
