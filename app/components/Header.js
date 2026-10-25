@@ -1,166 +1,160 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
+import React, { useState, useEffect } from 'react';
 
 export const Header = () => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const textContainerRef = useRef(null);
-  const imgRef = useRef(null);
-  const badge1Ref = useRef(null);
-  const badge2Ref = useRef(null);
+  const heroMockups = [
+    {
+      src: "/projects/hero-slide-1.jpg",
+      alt: "Bharosa Lab 3-Way Healthcare Ecosystem: Next.js Web Dashboard & Mobile Apps"
+    },
+    {
+      src: "/projects/hero-slide-2.jpg",
+      alt: "Bharosa Lab React Native Mobile UI"
+    },
+    {
+      src: "/projects/hero-slide-3.jpg",
+      alt: "Bharosa Lab Web Portal and Doctor Teleconsultation Dashboard"
+    },
+    {
+      src: "/projects/hero-slide-4.jpg",
+      alt: "Bharosa Lab Phlebotomist Rider Specimen Dispatch Live Route System"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // Staggered text animation
-    const textElements = textContainerRef.current.children;
-    gsap.fromTo(
-      textElements,
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: 'power3.out' }
-    );
-
-    // Image pop-in
-    gsap.fromTo(
-      imgRef.current,
-      { opacity: 0, scale: 0.8, x: 50 },
-      { opacity: 1, scale: 1, x: 0, duration: 1.2, ease: 'back.out(1.5)', delay: 0.4 }
-    );
-
-    // Floating badges animation
-    gsap.fromTo(
-      [badge1Ref.current, badge2Ref.current],
-      { opacity: 0, scale: 0 },
-      { opacity: 1, scale: 1, duration: 0.8, stagger: 0.3, ease: 'elastic.out(1, 0.6)', delay: 1 }
-    );
-
-    // Continuous floating effect for image
-    gsap.to(imgRef.current, {
-      y: -15,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut"
-    });
-  }, []);
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroMockups.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [heroMockups.length]);
 
   return (
-    <>
-      <header
-        id="home"
-        className="bg-white shadow-xl mx-auto rounded-3xl mt-8 overflow-hidden relative border border-gray-100"
-        style={{ width: '95%' }}
-      >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+    <section className="relative pt-10 pb-16 md:pt-16 md:pb-24 border-b border-gray-200 overflow-hidden bg-gradient-to-b from-white via-red-50/20 to-white">
+      
+      {/* Subtle warm red glow in background */}
+      <div className="absolute top-10 right-10 w-96 h-96 bg-red-100/50 rounded-full blur-3xl pointer-events-none -z-10" />
 
-        <div className="flex flex-col-reverse lg:flex-row justify-between items-center px-8 lg:px-16 py-16 relative z-10 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Section: Text */}
-          <div
-            className="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0"
-            ref={textContainerRef}
-          >
-            <span className="inline-block py-1 px-4 rounded-full bg-red-100 text-red-600 font-bold text-sm mb-6 border border-red-200">
-              👋 Welcome to my digital space
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-              Hi, I'm <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">
-                Hamza-Code88
-              </span>
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              A passionate <strong className="text-red-500">Full-Stack Web Developer</strong> specializing in creating modern, interactive, and high-performance applications using React, Next.js, and Expo.
-            </p>
+          {/* Left Column: 50% width on Desktop */}
+          <div className="lg:col-span-6 space-y-6">
             
-            <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-              <button
-                className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-red-500/50 transition-all duration-300 transform hover:-translate-y-1"
-                onClick={() => setIsPopupOpen(true)}
-              >
-                Get In Touch
-              </button>
+            {/* Eyebrow */}
+            <p className="text-sm font-bold tracking-wide uppercase text-red-600">
+              Full-Stack Web & Mobile Developer — Pakistan, working worldwide
+            </p>
+
+            {/* H1: Covering both Web & Mobile platforms */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-[1.1]">
+              I build scalable{' '}
+              <span className="text-red-600">Web & Mobile Apps</span> that ship to production.
+            </h1>
+
+            {/* Subhead */}
+            <p className="text-lg text-gray-600 leading-relaxed">
+              I help founders, clinics, and startups build modern <strong className="text-gray-900 font-semibold">Next.js web platforms</strong> and <strong className="text-gray-900 font-semibold">React Native (Expo) mobile apps</strong> with Supabase backends — from high-converting web portals to live Play Store releases.
+            </p>
+
+            {/* Clean Professional CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
-                href="#projects"
+                href="#proof"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('proof')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-4 px-8 rounded-full transition-all duration-300 border border-gray-200 shadow-sm"
+                className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold rounded-xl text-white bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
-                View My Work
+                <span>View Live Work & Case Studies &rarr;</span>
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.hamzacode.bharosalab"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3.5 border-2 border-gray-200 text-sm font-bold rounded-xl text-gray-800 bg-white hover:bg-gray-50 hover:border-red-300 hover:text-red-600 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-xs"
+              >
+                <span>See Bharosa Lab Live &rarr;</span>
               </a>
             </div>
+
+            {/* Proof Row */}
+            <div className="pt-4 border-t border-gray-200 text-sm text-gray-600">
+              <p>
+                <strong className="text-gray-900 font-semibold">Core Stack:</strong> Next.js &bull; React &bull; React Native (Expo) &bull; Supabase &bull; TypeScript &bull; n8n Automation
+              </p>
+            </div>
+
           </div>
 
-          {/* Right Section: Image & Badges */}
-          <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+          {/* Right Column: 50% width on Desktop */}
+          <div className="lg:col-span-6 w-full flex flex-col items-center justify-center">
             
-            {/* Floating Badge 1 */}
-            <div 
-              ref={badge1Ref}
-              className="absolute top-10 left-0 md:-left-10 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 z-20 hidden md:flex"
-            >
-              <div className="bg-green-100 p-2 rounded-full text-green-600 text-xl">🚀</div>
-              <div className="text-left">
-                <p className="text-xs text-gray-500 font-medium">Completed</p>
-                <p className="text-sm font-bold text-gray-800">100+ Projects</p>
-              </div>
+            <div className="relative w-full aspect-[16/9] flex items-center justify-center group overflow-hidden rounded-2xl shadow-xl border-2 border-red-100 bg-white">
+              
+              {heroMockups.map((img, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out flex items-center justify-center ${
+                    idx === currentIndex 
+                      ? "opacity-100 z-10" 
+                      : "opacity-0 z-0 pointer-events-none"
+                  }`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+
+              {/* Minimal Left Arrow */}
+              <button
+                type="button"
+                onClick={() => setCurrentIndex((prev) => (prev === 0 ? heroMockups.length - 1 : prev - 1))}
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-red-600/80 hover:bg-red-600 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 hover:scale-105"
+                aria-label="Previous Image"
+              >
+                &#8592;
+              </button>
+
+              {/* Minimal Right Arrow */}
+              <button
+                type="button"
+                onClick={() => setCurrentIndex((prev) => (prev + 1) % heroMockups.length)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-red-600/80 hover:bg-red-600 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 hover:scale-105"
+                aria-label="Next Image"
+              >
+                &#8594;
+              </button>
+
             </div>
 
-            {/* Main Image */}
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full p-2 border-4 border-dashed border-red-300">
-              <img
-                ref={imgRef}
-                className="w-full h-full object-cover rounded-full shadow-2xl bg-red-50"
-                src="/hero_avatar.png"
-                alt="Hamza Code88 3D Avatar"
-              />
-            </div>
-
-            {/* Floating Badge 2 */}
-            <div 
-              ref={badge2Ref}
-              className="absolute bottom-10 right-0 md:-right-5 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 z-20 hidden md:flex"
-            >
-              <div className="bg-yellow-100 p-2 rounded-full text-yellow-600 text-xl">⭐</div>
-              <div className="text-left">
-                <p className="text-xs text-gray-500 font-medium">Freelance</p>
-                <p className="text-sm font-bold text-gray-800">Top Rated</p>
-              </div>
+            {/* Bottom Dots */}
+            <div className="flex space-x-2 mt-4">
+              {heroMockups.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    idx === currentIndex ? "w-6 bg-red-600" : "w-2 bg-red-200 hover:bg-red-300"
+                  }`}
+                  aria-label={`Slide ${idx + 1}`}
+                />
+              ))}
             </div>
 
           </div>
-        </div>
-      </header>
 
-      {/* Social Links Popup Modal */}
-      {isPopupOpen && (
-        <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="bg-white p-8 rounded-2xl shadow-2xl text-center relative max-w-sm w-full mx-4 transform transition-all scale-100 animate-in zoom-in-95 duration-300 border-t-8 border-red-600">
-            <button 
-              onClick={() => setIsPopupOpen(false)} 
-              className="absolute top-2 right-4 text-3xl font-bold text-gray-400 hover:text-red-600 transition-colors"
-            >
-              &times;
-            </button>
-            <h2 className="text-3xl font-bold text-red-600 mb-6">Let's Connect!</h2>
-            <div className="flex flex-col gap-4">
-              <a href="https://github.com/Hamza-code88" target="_blank" rel="noreferrer" className="bg-gray-100 p-4 rounded-xl hover:bg-gray-200 font-bold text-gray-800 transition transform hover:-translate-y-1 hover:shadow-md flex items-center justify-center gap-2">
-                🚀 GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/hamza-khan-0a5419336" target="_blank" rel="noreferrer" className="bg-blue-50 p-4 rounded-xl hover:bg-blue-100 font-bold text-blue-700 transition transform hover:-translate-y-1 hover:shadow-md flex items-center justify-center gap-2">
-                💼 LinkedIn
-              </a>
-              <a href="https://youtube.com/@hamza-code8887" target="_blank" rel="noreferrer" className="bg-red-50 p-4 rounded-xl hover:bg-red-100 font-bold text-red-600 transition transform hover:-translate-y-1 hover:shadow-md flex items-center justify-center gap-2">
-                📺 YouTube
-              </a>
-              <a href="https://wa.me/923494427822" target="_blank" rel="noreferrer" className="bg-green-50 p-4 rounded-xl hover:bg-green-100 font-bold text-green-600 transition transform hover:-translate-y-1 hover:shadow-md flex items-center justify-center gap-2">
-                💬 WhatsApp
-              </a>
-            </div>
-          </div>
         </div>
-      )}
-    </>
+
+      </div>
+    </section>
   );
 };
+
+export default Header;

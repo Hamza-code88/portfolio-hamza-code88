@@ -1,0 +1,43 @@
+# Hamza-Code88 (Hamza Khan)
+> Full-Stack Web & Mobile Systems Developer | Specialized in Next.js, React Native (Expo), and Supabase Backends.
+
+## Profile Summary
+- Name: Hamza Khan
+- Handle: Hamza-Code88
+- Location: Pakistan (Working Remotely Worldwide)
+- Focus: High-performance, offline-capable, and production-grade Web & Mobile Applications with zero bloatware.
+- Experience: Since November 2022.
+
+## Core Technical Stack
+- Mobile Engineering: React Native (Expo), NativeWind, Mobile Push Notifications, Offline SQLite/WatermelonDB.
+- Frontend: Next.js (App Router, Server Components), React, TypeScript, Tailwind CSS, Monaco Editor.
+- Backend & Database: Supabase, PostgreSQL, Node.js, Express, FastAPI, Clerk Auth.
+- Hardware & Embedded: ESP8266 NodeMCU, IoT Webhooks, WebRTC P2P Data Channels.
+
+## Live Production Products & Featured Engineering Proof
+1. Bharosa Lab (Mobile Ecosystem):
+   - Description: End-to-end 3-way diagnostic healthcare platform featuring a Patient mobile app for home sample collection and a Rider logistics dispatcher app with real-time specimen tracking.
+   - Stack: React Native (Expo), Next.js, Supabase, PostgreSQL.
+   - Status: Live on Google Play Store.
+   - Link: https://play.google.com/store/apps/details?id=com.hamzacode.bharosalab
+
+2. Bharosa Lab & Doctor Portals (Web Ecosystem):
+   - Description: Integrated Next.js healthcare partner portal and doctor workspace featuring real-time patient video teleconsultation, digital prescriptions, lab orders, and analytics.
+   - Stack: Next.js, Tailwind CSS, Supabase, Vercel.
+   - Status: Live on Vercel.
+   - Link: https://bharosa-lab-app.vercel.app/
+
+3. AirDart:
+   - Description: Offline zero-cloud P2P peer-to-peer file sharing and hand-tracking gesture recognition ecosystem built with WebRTC and MediaPipe.
+   - Stack: Next.js, WebRTC, MediaPipe, TypeScript, Tailwind CSS.
+   - Repository: https://github.com/Hamza-code88
+
+## Verified Links
+- Portfolio: https://www.hamzacode88.com/
+- GitHub: https://github.com/Hamza-code88
+- Fiverr: https://www.fiverr.com/s/L33GwPY
+- LinkedIn: https://www.linkedin.com/in/hamza-khan-0a5419336
+- Upwork: https://www.upwork.com/freelancers/~01df46cd7c20bc1397
+- Google Play: https://play.google.com/store/apps/details?id=com.hamzacode.bharosalab
+- Contact Email: connecthamzacode88@gmail.com
+- Direct WhatsApp: https://wa.me/923494427822

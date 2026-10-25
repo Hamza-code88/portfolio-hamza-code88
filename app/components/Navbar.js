@@ -1,110 +1,166 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleScroll = (e, id) => {
+  const scrollTo = (e, id) => {
     e.preventDefault();
     setIsMenuOpen(false);
-    
-    // If it's home, scroll to top
-    if (id === 'home') {
+
+    if (id === 'top') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    
+
     const element = document.getElementById(id);
     if (element) {
-      // Offset a bit for the navbar
-      const y = element.getBoundingClientRect().top + window.scrollY - 100;
+      const yOffset = -80;
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
   return (
-    <>
-      <nav
-        className="flex items-center justify-between p-5 shadow-md m-auto mt-5 bg-white sticky top-4 z-50 rounded-lg"
-        style={{ width: '95%' }}
-      >
-        {/* Logo Section */}
-        <div className="text-3xl font-bold cursor-pointer" onClick={(e) => handleScroll(e, 'home')}>
-          <h2>
-            <span className="text-red-600">Hu</span>m-
-            <span className="text-red-600">Co</span>de
-          </h2>
-        </div>
-
-        {/* Links Section - Hidden on mobile */}
-        <div className="hidden lg:flex w-5/12">
-          <ul className="flex justify-evenly font-bold w-full">
-            <li>
-              <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="hover:text-red-600 transition-colors cursor-pointer">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="hover:text-red-600 transition-colors cursor-pointer">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#skills" onClick={(e) => handleScroll(e, 'skills')} className="hover:text-red-600 transition-colors cursor-pointer">
-                My Skills
-              </a>
-            </li>
-            <li>
-              <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="hover:text-red-600 transition-colors cursor-pointer">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#Contact" onClick={(e) => handleScroll(e, 'Contact')} className="hover:text-red-600 transition-colors cursor-pointer">
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Hamburger Menu for Mobile */}
-        <div className="flex lg:hidden ">
-          <button
-            className="text-3xl"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle Menu"
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-red-100 shadow-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          
+          {/* Logo with signature red accent */}
+          <a
+            href="#top"
+            onClick={(e) => scrollTo(e, 'top')}
+            className="flex items-center font-extrabold text-xl tracking-tight text-gray-900 hover:text-red-600 transition-colors"
           >
-            ☰
-          </button>
-        </div>
+            <span>Hamza-</span>
+            <span className="text-red-600">Code88</span>
+          </a>
 
-        {/* Dropdown Menu for Mobile */}
-        {isMenuOpen && (
-          <div
-            className="absolute top-24 left-0 w-full bg-white shadow-md rounded-lg lg:hidden border-t-4 border-red-600"
-            style={{ zIndex: 100 }}
-          >
-            <ul className="flex flex-col items-center p-5 space-y-5 font-bold">
-              <li>
-                <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="hover:text-red-600 transition-colors text-lg">Home</a>
-              </li>
-              <li>
-                <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="hover:text-red-600 transition-colors text-lg">About</a>
-              </li>
-              <li>
-                <a href="#skills" onClick={(e) => handleScroll(e, 'skills')} className="hover:text-red-600 transition-colors text-lg">My Skills</a>
-              </li>
-              <li>
-                <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="hover:text-red-600 transition-colors text-lg">Projects</a>
-              </li>
-              <li>
-                <a href="#Contact" onClick={(e) => handleScroll(e, 'Contact')} className="hover:text-red-600 transition-colors text-lg">Contact Us</a>
-              </li>
-            </ul>
+          {/* Nav links */}
+          <div className="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-600">
+            <a
+              href="#proof"
+              onClick={(e) => scrollTo(e, 'proof')}
+              className="hover:text-red-600 transition-colors"
+            >
+              Featured Proof
+            </a>
+            <a
+              href="#services"
+              onClick={(e) => scrollTo(e, 'services')}
+              className="hover:text-red-600 transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="#process"
+              onClick={(e) => scrollTo(e, 'process')}
+              className="hover:text-red-600 transition-colors"
+            >
+              Process
+            </a>
+            <a
+              href="#about"
+              onClick={(e) => scrollTo(e, 'about')}
+              className="hover:text-red-600 transition-colors"
+            >
+              About
+            </a>
           </div>
-        )}
-      </nav>
-    </>
+
+          {/* Direct Actions in Navbar: Direct Email Click (mailto) & Direct WhatsApp */}
+          <div className="hidden md:flex items-center space-x-3">
+            <a
+              href="mailto:connecthamzacode88@gmail.com"
+              className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold rounded-lg text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 transition-all"
+            >
+              Email Direct &rarr;
+            </a>
+
+            <a
+              href="https://wa.me/923494427822"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold rounded-lg text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/20 hover:-translate-y-0.5 active:translate-y-0 transition-all"
+            >
+              WhatsApp Direct &rarr;
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              type="button"
+              className="p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-red-50 focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      {isMenuOpen && (
+        <div className="md:hidden border-b border-red-100 bg-white px-4 pt-3 pb-6 space-y-3">
+          <a
+            href="#proof"
+            onClick={(e) => scrollTo(e, 'proof')}
+            className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
+          >
+            Featured Proof
+          </a>
+          <a
+            href="#services"
+            onClick={(e) => scrollTo(e, 'services')}
+            className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
+          >
+            Services
+          </a>
+          <a
+            href="#process"
+            onClick={(e) => scrollTo(e, 'process')}
+            className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
+          >
+            Process
+          </a>
+          <a
+            href="#about"
+            onClick={(e) => scrollTo(e, 'about')}
+            className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
+          >
+            About
+          </a>
+          <div className="pt-3 flex flex-col gap-2">
+            <a
+              href="mailto:connecthamzacode88@gmail.com"
+              className="w-full text-center py-2.5 text-sm font-bold rounded-lg text-red-600 bg-red-50 border border-red-200"
+            >
+              Email Direct (connecthamzacode88@gmail.com)
+            </a>
+            <a
+              href="https://wa.me/923494427822"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full text-center py-2.5 text-sm font-bold rounded-lg text-white bg-red-600 hover:bg-red-700 shadow-md transition"
+            >
+              WhatsApp Direct (+92 349 4427822)
+            </a>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
+
+export default Navbar;

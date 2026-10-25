@@ -1,115 +1,86 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
 
 export const About = () => {
-  const aboutRef = useRef(null);
-  const textRef = useRef(null);
-  const imgRef = useRef(null);
-
-  useEffect(() => {
-    // Container fade up
-    gsap.fromTo(
-      aboutRef.current,
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1.2, 
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 85%",
-        }
-      }
-    );
-
-    // Image Sci-fi hover floating effect
-    gsap.to(imgRef.current, {
-      y: -10,
-      boxShadow: "0px 15px 30px rgba(220, 38, 38, 0.4)", // red glow
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut"
-    });
-  }, []);
-
   return (
-    <>
-      <section
-        id="about"
-        ref={aboutRef}
-        className="mx-auto mt-12 w-[96%] relative overflow-hidden"
-      >
-        <div className="bg-white shadow-2xl rounded-3xl p-8 md:p-16 border-t-4 border-red-600 relative z-10">
+    <section id="about" className="py-20 border-b border-gray-200 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+          {/* Left Column: Heading & Context - Red Subtitle Removed */}
+          <div className="lg:col-span-5">
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 mb-6">
+              About Hamza-Code88
+            </h2>
             
-            {/* Left Side: Sci-fi Real Image */}
-            <div className="w-full md:w-5/12 flex justify-center relative">
-              {/* Decorative Tech Elements */}
-              <div className="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-red-500 rounded-tl-xl opacity-50"></div>
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-red-500 rounded-br-xl opacity-50"></div>
-              
-              <div 
-                ref={imgRef}
-                className="relative rounded-2xl overflow-hidden border-2 border-red-200 bg-gray-900"
-              >
-                <img
-                  className="w-full max-w-sm h-auto object-cover contrast-125"
-                  src="./about_scifi.png" 
-                  alt="Hamza Code88 Real Developer"
-                />
-                {/* Tech overlay scanline effect */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/10 to-transparent opacity-50 mix-blend-overlay pointer-events-none"></div>
-              </div>
-            </div>
-
-            {/* Right Side: Text & Details */}
-            <div className="w-full md:w-7/12" ref={textRef}>
-              <div className="inline-block bg-red-50 text-red-600 px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase mb-4">
-                Know the Developer
-              </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-                About <span className="text-red-600">Me</span>
-              </h2>
-              
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed border-l-4 border-red-200 pl-6">
-                <p>
-                  Hi, I'm <strong className="text-gray-900">Hamza-Code88</strong>, a passionate Web & Mobile Developer. I specialize in building modern, user-friendly, and visually stunning applications that bridge the gap between design and complex engineering.
-                </p>
-                <p>
-                  My journey started with simple HTML & CSS, but today my arsenal includes <strong className="text-red-500">React, Next.js, Tailwind CSS, Expo React Native,</strong> and automation tools like <strong className="text-red-500">n8n</strong>.
-                </p>
-                <p>
-                  I don't just write code; I craft digital experiences. Whether it's a sleek landing page, a complex dashboard, or a cross-platform mobile app, I bring ideas to life with clean architecture and pixel-perfect design.
-                </p>
+            {/* Verifiable Stats Block with red touches */}
+            <div className="space-y-4 pt-4 border-t border-gray-200">
+              <div className="p-4 rounded-2xl bg-[#fbfbfa] border-2 border-gray-100 hover:border-red-200 transition">
+                <span className="text-xs font-mono font-bold text-red-600 uppercase">Since Nov 2022</span>
+                <p className="text-base font-bold text-gray-900 mt-1">Full-Stack & Mobile Development</p>
+                <p className="text-xs text-gray-500 mt-0.5">Continuous engineering across web, mobile, and APIs.</p>
               </div>
 
-              {/* Stats / Tech Grid */}
-              <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center hover:bg-red-50 transition-colors">
-                  <h3 className="text-3xl font-black text-red-600">3+</h3>
-                  <p className="text-sm font-semibold text-gray-500 uppercase mt-1">Years Exp</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center hover:bg-red-50 transition-colors">
-                  <h3 className="text-3xl font-black text-red-600">100%</h3>
-                  <p className="text-sm font-semibold text-gray-500 uppercase mt-1">Success Rate</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center sm:col-span-1 col-span-2 hover:bg-red-50 transition-colors">
-                  <h3 className="text-3xl font-black text-red-600">24/7</h3>
-                  <p className="text-sm font-semibold text-gray-500 uppercase mt-1">Support</p>
-                </div>
+              <div className="p-4 rounded-2xl bg-[#fbfbfa] border-2 border-gray-100 hover:border-red-200 transition">
+                <span className="text-xs font-mono font-bold text-red-600 uppercase">Live on Play Store</span>
+                <p className="text-base font-bold text-gray-900 mt-1">Bharosa Lab Patient + Rider Apps</p>
+                <p className="text-xs text-gray-500 mt-0.5">Active mobile applications downloaded and used daily.</p>
               </div>
 
+              <div className="p-4 rounded-2xl bg-[#fbfbfa] border-2 border-gray-100 hover:border-red-200 transition">
+                <span className="text-xs font-mono font-bold text-red-600 uppercase">3-Way Platform Architecture</span>
+                <p className="text-base font-bold text-gray-900 mt-1">Patient, Rider, and Lab/Admin Portal</p>
+                <p className="text-xs text-gray-500 mt-0.5">Cross-synchronized data using Supabase PostgreSQL.</p>
+              </div>
             </div>
           </div>
+
+          {/* Right Column: Bio Copy */}
+          <div className="lg:col-span-7 space-y-6 text-base text-gray-600 leading-relaxed pt-2">
+            
+            <p className="text-xl text-gray-900 font-semibold">
+              I am a full-stack and mobile developer working since November 2022.
+            </p>
+
+            <p>
+              I co-founded <strong className="text-gray-900">Bharosa Lab</strong>, a healthcare platform where patients book home sample collection, riders pick up samples, and labs manage orders through a web portal.
+            </p>
+
+            <p>
+              I work mainly in <strong className="text-gray-900">Next.js, React Native (Expo), TypeScript, and Supabase</strong>, with <strong className="text-gray-900">FastAPI</strong> and automation tools (like n8n and LangChain) where they fit.
+            </p>
+
+            <p>
+              I prefer shipping a working, production-grade product over an unfinished or polished demo. Every app I take on is designed for maintainability, speed, and real users.
+            </p>
+
+            <div className="pt-6 border-t border-gray-200 flex flex-wrap gap-4 text-sm font-bold">
+              <a
+                href="https://github.com/Hamza-code88"
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-900 hover:text-red-600 transition"
+              >
+                Inspect my GitHub &rarr;
+              </a>
+              <span className="text-gray-300">&middot;</span>
+              <a
+                href="https://www.linkedin.com/in/hamza-khan-0a5419336"
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-900 hover:text-red-600 transition"
+              >
+                LinkedIn Profile &rarr;
+              </a>
+            </div>
+
+          </div>
+
         </div>
-      </section>
-    </>
+
+      </div>
+    </section>
   );
 };
+
+export default About;
