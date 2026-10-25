@@ -13,14 +13,14 @@ export const Contact = () => {
   const socials = [
     {
       name: "WhatsApp Direct",
-      desc: "+92 349 4427822 &bull; Fast Response",
+      desc: "+92 349 4427822 &bull; Direct Chat",
       link: "https://wa.me/923494427822",
-      label: "Open Chat",
+      label: "Open WhatsApp",
       color: "border-emerald-200 bg-emerald-50/50 hover:border-emerald-400 text-emerald-800"
     },
     {
       name: "Fiverr Gig / Profile",
-      desc: "Custom Orders & Full-Stack Gig Consultation",
+      desc: "Custom Web & App Gig Consultation",
       link: "https://www.fiverr.com/s/L33GwPY",
       label: "Order on Fiverr",
       color: "border-green-200 bg-green-50/50 hover:border-green-400 text-green-900"
@@ -64,11 +64,11 @@ export const Contact = () => {
             Let's Connect & Work Together
           </h2>
           <p className="text-lg text-gray-600 mt-2">
-            Choose your preferred platform below to discuss projects, timelines, and contract work.
+            No long contact forms. Connect with me directly on your preferred channel below.
           </p>
         </div>
 
-        {/* Highlighted Direct Contact Cards: WhatsApp, Fiverr, Upwork, LinkedIn, GitHub, Play Store */}
+        {/* 6 Direct Contact Cards: WhatsApp, Fiverr, Upwork, LinkedIn, GitHub, Play Store */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {socials.map((item, idx) => (
             <a
@@ -92,14 +92,14 @@ export const Contact = () => {
           ))}
         </div>
 
-        {/* Email Direct Action Banner */}
+        {/* Direct Email Banner (NO heavy form) */}
         <div className="p-8 rounded-3xl bg-white border-2 border-red-100 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <span className="text-xs font-bold uppercase text-red-600 tracking-wider">Direct Email Communication</span>
             <p className="text-xl sm:text-2xl font-extrabold text-gray-900 mt-1">
               connecthamzacode88@gmail.com
             </p>
-            <p className="text-xs text-gray-500 mt-1">Guaranteed direct response within 2 hours.</p>
+            <p className="text-xs text-gray-500 mt-1">Direct communication with zero intermediary recruiters.</p>
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <a

@@ -43,7 +43,21 @@ export const Navbar = () => {
               onClick={(e) => scrollTo(e, 'proof')}
               className="hover:text-red-600 transition-colors"
             >
-              Featured Proof
+              Work
+            </a>
+            <a
+              href="#about"
+              onClick={(e) => scrollTo(e, 'about')}
+              className="hover:text-red-600 transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="#stack"
+              onClick={(e) => scrollTo(e, 'stack')}
+              className="hover:text-red-600 transition-colors"
+            >
+              Stack
             </a>
             <a
               href="#services"
@@ -58,13 +72,6 @@ export const Navbar = () => {
               className="hover:text-red-600 transition-colors"
             >
               Process
-            </a>
-            <a
-              href="#about"
-              onClick={(e) => scrollTo(e, 'about')}
-              className="hover:text-red-600 transition-colors"
-            >
-              About
             </a>
           </div>
 
@@ -118,7 +125,21 @@ export const Navbar = () => {
             onClick={(e) => scrollTo(e, 'proof')}
             className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
           >
-            Featured Proof
+            Work
+          </a>
+          <a
+            href="#about"
+            onClick={(e) => scrollTo(e, 'about')}
+            className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
+          >
+            About
+          </a>
+          <a
+            href="#stack"
+            onClick={(e) => scrollTo(e, 'stack')}
+            className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
+          >
+            Stack
           </a>
           <a
             href="#services"
@@ -133,13 +154,6 @@ export const Navbar = () => {
             className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
           >
             Process
-          </a>
-          <a
-            href="#about"
-            onClick={(e) => scrollTo(e, 'about')}
-            className="block text-base font-semibold text-gray-700 hover:text-red-600 py-1.5"
-          >
-            About
           </a>
           <div className="pt-3 flex flex-col gap-2">
             <a

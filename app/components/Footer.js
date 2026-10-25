@@ -42,7 +42,7 @@ export const Footer = () => {
           </div>
 
           <p className="text-xs text-gray-400 mt-5 font-medium">
-            Average response time: &lt; 2 hours &bull; Location: Pakistan &bull; Working remotely worldwide
+            Location: Pakistan &bull; Working remotely worldwide
           </p>
         </div>
 

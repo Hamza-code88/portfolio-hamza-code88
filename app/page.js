@@ -4,33 +4,37 @@ import React from 'react';
 import { Header } from "./components/Header";
 import { Hire } from './components/Hire';
 import { FeaturedProof } from './components/FeaturedProof';
+import { About } from "./components/About";
+import { Stack } from "./components/Stack";
 import Services from "./components/Services";
 import Process from "./components/Process";
-import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 
 export default function Home() {
   return (
     <div className="bg-[#fbfbfa] text-[#111827]">
-      {/* 1. Hero with 16:9 Mockups & Direct Action CTAs */}
+      {/* 1. Hero with Balanced Headline & Responsive Mockups */}
       <Header />
 
-      {/* 2. Top Social Proof / Tech Strip */}
+      {/* 2. Platform Chips (GitHub, LinkedIn, Upwork, Fiverr, Google Play) */}
       <Hire />
 
-      {/* 3. Featured Proof & Case Studies (Bharosa Lab, AirDart, Autonomous AI) */}
+      {/* 3. Featured Proof (Bharosa Lab, Dine-Sync, Sedap, Serene Legacy) */}
       <FeaturedProof />
 
-      {/* 4. Services */}
-      <Services />
-
-      {/* 5. 4-Step Process */}
-      <Process />
-
-      {/* 6. About */}
+      {/* 4. About Hamza-Code88 */}
       <About />
 
-      {/* 7. Dedicated Contact & Social Platforms Hub (WhatsApp, Upwork, Fiverr, LinkedIn, GitHub, Email) */}
+      {/* 5. Technical Stack (Dedicated Section after About, before Services) */}
+      <Stack />
+
+      {/* 6. Services & Capabilities */}
+      <Services />
+
+      {/* 7. 4-Step Process */}
+      <Process />
+
+      {/* 8. Direct Contact Hub (Strictly NO form) */}
       <Contact />
     </div>
   );

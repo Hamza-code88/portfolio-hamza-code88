@@ -5,34 +5,44 @@
 - Name: Hamza Khan
 - Handle: Hamza-Code88
 - Location: Pakistan (Working Remotely Worldwide)
-- Focus: High-performance, offline-capable, and production-grade Web & Mobile Applications with zero bloatware.
+- Focus: High-performance, production-grade Web & Mobile Applications with zero bloatware.
 - Experience: Since November 2022.
 
-## Core Technical Stack
-- Mobile Engineering: React Native (Expo), NativeWind, Mobile Push Notifications, Offline SQLite/WatermelonDB.
-- Frontend: Next.js (App Router, Server Components), React, TypeScript, Tailwind CSS, Monaco Editor.
-- Backend & Database: Supabase, PostgreSQL, Node.js, Express, FastAPI, Clerk Auth.
-- Hardware & Embedded: ESP8266 NodeMCU, IoT Webhooks, WebRTC P2P Data Channels.
+## Technical Stack Architecture
+- Web & Core: Next.js, React, TypeScript, JavaScript
+- Mobile: React Native (Expo), NativeWind
+- Backend & Data: Supabase, PostgreSQL, Node.js, Express, FastAPI, Clerk
+- Styling & State: Tailwind CSS, Zustand, Monaco Editor
+- AI, Voice & Automation: n8n, Whisper, Groq, Gemini API, Retell AI, LangChain, ChromaDB, Vosk, Eel
+- Hardware: ESP8266 NodeMCU
+- Note: Production experience in the first three groups; working experience in AI/voice and automation.
 
-## Live Production Products & Featured Engineering Proof
-1. Bharosa Lab (Mobile Ecosystem):
-   - Description: End-to-end 3-way diagnostic healthcare platform featuring a Patient mobile app for home sample collection and a Rider logistics dispatcher app with real-time specimen tracking.
+## Real Production Products & Live Work
+1. Bharosa Lab:
+   - Description: Full-scale diagnostic healthcare ecosystem featuring a Patient mobile app for home sample booking, Rider logistics dispatcher app, and laboratory partner portal.
    - Stack: React Native (Expo), Next.js, Supabase, PostgreSQL.
    - Status: Live on Google Play Store.
    - Link: https://play.google.com/store/apps/details?id=com.hamzacode.bharosalab
 
-2. Bharosa Lab & Doctor Portals (Web Ecosystem):
-   - Description: Integrated Next.js healthcare partner portal and doctor workspace featuring real-time patient video teleconsultation, digital prescriptions, lab orders, and analytics.
-   - Stack: Next.js, Tailwind CSS, Supabase, Vercel.
-   - Status: Live on Vercel.
-   - Link: https://bharosa-lab-app.vercel.app/
+2. Dine-Sync:
+   - Description: QR restaurant contactless table ordering and real-time kitchen display management SaaS.
+   - Stack: Next.js (App Router), TypeScript, Tailwind CSS, Vercel.
+   - Status: Live Web App.
+   - Link: https://dine-sync.vercel.app
 
-3. AirDart:
-   - Description: Offline zero-cloud P2P peer-to-peer file sharing and hand-tracking gesture recognition ecosystem built with WebRTC and MediaPipe.
-   - Stack: Next.js, WebRTC, MediaPipe, TypeScript, Tailwind CSS.
-   - Repository: https://github.com/Hamza-code88
+3. Sedap:
+   - Description: Multi-branch commercial restaurant management and sales analytics portal.
+   - Stack: Next.js, React, Tailwind CSS, Supabase.
+   - Status: Production Web Application.
+   - Link: https://github.com/Hamza-code88
 
-## Verified Links
+4. Serene Legacy:
+   - Description: Boutique luxury hospitality booking platform with reservation inquiry workflows.
+   - Stack: Next.js, React, Tailwind CSS, Vercel.
+   - Status: Live Web Experience.
+   - Link: https://github.com/Hamza-code88
+
+## Verified Direct Links
 - Portfolio: https://www.hamzacode88.com/
 - GitHub: https://github.com/Hamza-code88
 - Fiverr: https://www.fiverr.com/s/L33GwPY

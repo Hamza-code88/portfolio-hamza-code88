@@ -5,7 +5,6 @@ import { getProjects } from '@/app/actions/projects';
 export const FeaturedProof = () => {
   const [dbProjects, setDbProjects] = useState([]);
 
-  // Fetch projects from Supabase database (dynamic admin panel data)
   useEffect(() => {
     const fetchDB = async () => {
       try {
@@ -20,18 +19,18 @@ export const FeaturedProof = () => {
     fetchDB();
   }, []);
 
-  // Focused 3 production case studies (Bharosa Lab Mobile, Bharosa Lab Doctor Portals, and AirDart)
+  // Approved real production products per updated brief
   const staticFeatured = [
     {
-      id: "bharosa-mobile",
+      id: "bharosa-lab",
       title: "Bharosa Lab",
-      subtitle: "3-Way Diagnostic Healthcare Ecosystem (Patient & Rider Mobile)",
-      badge: "Live on Play Store",
+      subtitle: "3-Way Diagnostic Healthcare Platform & Mobile Apps",
+      badge: "Flagship &bull; Live on Google Play",
       description:
-        "Complete diagnostic healthcare ecosystem operating with live patients and specimen collection orders. Features a cross-platform Patient mobile app for home sample booking and a Rider logistics dispatcher app with live route navigation.",
+        "Full-scale production healthcare ecosystem operating with active patients and lab specimen collection orders. Features a cross-platform Patient mobile app for home sample booking, a Rider logistics dispatcher app, and a multi-tenant laboratory partner web portal.",
       outcomes: [
-        "Patient mobile app: live test catalog, home sample collection scheduling, and digital PDF report downloads.",
-        "Rider logistics app: real-time pickup dispatcher, route navigation, and sample handover tracking.",
+        "Patient mobile app: live test directory, home sample scheduling, and digital PDF report downloads.",
+        "Rider logistics app: real-time pickup dispatcher, route navigation, and specimen handover tracking.",
         "Supabase PostgreSQL synchronization keeping mobile apps and web portals updated in real time."
       ],
       stack: ["React Native (Expo)", "Next.js", "Supabase", "PostgreSQL"],
@@ -42,42 +41,61 @@ export const FeaturedProof = () => {
       image: "/projects/hero-slide-1.jpg"
     },
     {
-      id: "bharosa-portals",
-      title: "Bharosa Lab & Doctor Portals",
-      subtitle: "Web Healthcare Ecosystem & Teleconsultation Platform",
-      badge: "Vercel Live Web App",
+      id: "dine-sync",
+      title: "Dine-Sync",
+      subtitle: "QR Restaurant Table Ordering & Live Kitchen Management",
+      badge: "Commercial SaaS &bull; Deployed on Vercel",
       description:
-        "Integrated Next.js healthcare partner portal and doctor workspace. Connects clinics, doctors, and partner diagnostic laboratories for telemedicine video consultations, digital prescriptions, test order pipelines, and business revenue analytics.",
+        "Contactless dining web platform eliminating paper menu costs and accelerating kitchen turnaround. Guests scan a table QR code to browse categorized digital menus and place live orders directly received on the kitchen manager screen.",
       outcomes: [
-        "Doctor Portal: Real-time patient video teleconsultation, digital prescription creation, and clinical history review.",
-        "Partner Lab Dashboard: Active order pipelines, phlebotomist rider tracking, and commission payouts.",
-        "Deployed on Vercel with high availability, role-based access control, and instant data reactivity."
+        "Live table-specific session ordering with instant kitchen display board synchronization.",
+        "Real-time bill calculation, tax breakdown, and customizable dish modifiers.",
+        "Comprehensive restaurant manager dashboard for live menu pricing and inventory updates."
       ],
-      stack: ["Next.js (App Router)", "Tailwind CSS", "Supabase", "Vercel"],
+      stack: ["Next.js (App Router)", "TypeScript", "Tailwind CSS", "Vercel"],
       primaryLink: {
-        label: "Visit Live Web Portal",
-        url: "https://bharosa-lab-app.vercel.app/"
+        label: "Visit Dine-Sync Web App",
+        url: "https://dine-sync.vercel.app"
       },
-      image: "/projects/hero-slide-3.jpg"
+      image: "/projects/img 2.PNG"
     },
     {
-      id: "airdart",
-      title: "AirDart",
-      subtitle: "Zero-Cloud P2P File Sharing & Gesture Ecosystem",
-      badge: "Open Source / WebRTC",
+      id: "sedap",
+      title: "Sedap",
+      subtitle: "Restaurant Analytics & Multi-Branch Management Portal",
+      badge: "Production Web App",
       description:
-        "High-speed, offline-first peer-to-peer data transport eliminating cloud server bandwidth. Integrates MediaPipe computer vision hand-tracking gestures to 'throw' files across local browser windows in real time.",
+        "Complete commercial food & beverage operations portal designed for multi-branch tracking. Provides restaurant owners with real-time sales metrics, staff shift schedules, and branch order performance summaries.",
       outcomes: [
-        "End-to-end encrypted direct browser-to-browser P2P WebRTC data channels.",
-        "MediaPipe AI vision pipeline recognizing pinch, hold, and swipe release gestures at 60 FPS.",
-        "Zero server storage costs, ultra-low latency local transfer with automated fallback."
+        "Centralized sales and revenue analytics tracking across multiple restaurant branches.",
+        "Visual order fulfillment pipeline and daily operational performance metrics.",
+        "Fast server-side rendered dashboard built for high data throughput."
       ],
-      stack: ["Next.js", "WebRTC", "MediaPipe AI", "TypeScript", "Tailwind CSS"],
+      stack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
       primaryLink: {
-        label: "GitHub Repository & Source",
+        label: "Case Study & Live Preview",
         url: "https://github.com/Hamza-code88"
       },
-      image: "/projects/hero-slide-4.jpg"
+      image: "/projects/img 1.png"
+    },
+    {
+      id: "serene-legacy",
+      title: "Serene Legacy",
+      subtitle: "Boutique Hospitality & Luxury Booking Platform",
+      badge: "Live Web Experience",
+      description:
+        "Modern hospitality web platform featuring room reservation scheduling, dynamic amenity showcases, and seamless guest inquiry workflows built with optimized performance.",
+      outcomes: [
+        "Interactive room selection showcase with responsive high-resolution galleries.",
+        "Direct reservation request workflows with automated availability validation.",
+        "Polished editorial design architecture optimized for zero layout shift."
+      ],
+      stack: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+      primaryLink: {
+        label: "Case Study & Live Preview",
+        url: "https://github.com/Hamza-code88"
+      },
+      image: "/projects/img 3.png"
     }
   ];
 
@@ -88,14 +106,14 @@ export const FeaturedProof = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-            Featured Proof & Case Studies
+            Featured Proof & Production Work
           </h2>
           <p className="text-lg text-gray-600 mt-2">
-            Production systems, live products, and measurable engineering outcomes.
+            Real production systems and working client platforms with verified human titles and tech tags.
           </p>
         </div>
 
-        {/* 3 Focused Case Studies */}
+        {/* Real Working Products Grid */}
         <div className="space-y-12">
           {staticFeatured.map((item, idx) => (
             <div
@@ -118,9 +136,10 @@ export const FeaturedProof = () => {
                 <div className="lg:col-span-6 p-8 sm:p-10 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center space-x-2 mb-3">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-700 border border-red-200">
-                        {item.badge}
-                      </span>
+                      <span 
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-700 border border-red-200"
+                        dangerouslySetInnerHTML={{ __html: item.badge }}
+                      />
                     </div>
 
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-1 group-hover:text-red-600 transition-colors">
